@@ -1,4 +1,4 @@
-# The Email Scraper
+# Email Scraper
 Scrape emails using Google Search Terms
 
 ## scraper.py
