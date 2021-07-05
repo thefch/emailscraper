@@ -1,7 +1,33 @@
-from googlesearch import search
+import os
+
+print("#########################################################")
+print("#           Email Scraper - By Wellyington              #")
+print("#########################################################")
+
+try:
+    from googlesearch import search
+except:
+    upgrade_pip = lambda: os.system("pip install --upgrade pip")
+    install_google = lambda: os.system("pip install google")
+    reload_scraper = lambda: os.system("python scraper.py")
+    print("Upgrading Pip")
+    print("----------------------------------------------------------")
+    upgrade_pip()
+    print("Downloading Google Library")
+    print("----------------------------------------------------------")
+    install_google()
+    print("Instalation complete: Ready to start scraping")
+    print("----------------------------------------------------------")
+    reload_scraper()
 import re, urllib.request, time
+print("What is your search term?")
 query = input("Search: ")
+print("----------------------------------------------------------")
+print("What is the total amount of results? min: 1 - max: 1000")
 total = input("Total Results: ")
+print("----------------------------------------------------------")
+print("Starting Scrapping Function")
+print("----------------------------------------------------------")
 for j in search(query, tld="com", num=int(total), stop=int(total), pause=2):
     URLs = open("urls - " + query + ".txt","a")
     URLs.write(j + "\n")
