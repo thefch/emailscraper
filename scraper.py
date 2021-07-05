@@ -1,31 +1,30 @@
 import os
+from config import total
 
 print("#########################################################")
-print("#           Email Scraper - By Wellyington              #")
-print("#########################################################")
+print("#        Email Scraper - Dev. By Wellyington            #")
+print("#          https://wellyington.github.io/               #")
+print("#########################################################\n\n")
 
 try:
     from googlesearch import search
 except:
     upgrade_pip = lambda: os.system("pip install --upgrade pip")
-    install_google = lambda: os.system("pip install google")
+    install_google = lambda: os.system("pip install google glob2")
     reload_scraper = lambda: os.system("python scraper.py")
     print("Upgrading Pip")
     print("----------------------------------------------------------")
     upgrade_pip()
-    print("Downloading Google Library")
+    print("Downloading Google Library and Glob2")
     print("----------------------------------------------------------")
     install_google()
     print("Instalation complete: Ready to start scraping")
     print("----------------------------------------------------------")
     reload_scraper()
 import re, urllib.request, time
-print("What is your search term?")
+print("What is the search term?")
 query = input("Search: ")
-print("----------------------------------------------------------")
-print("What is the total amount of results? min: 1 - max: 1000")
-total = input("Total Results: ")
-print("----------------------------------------------------------")
+print("\n\n----------------------------------------------------------")
 print("Starting Scrapping Function")
 print("----------------------------------------------------------")
 for j in search(query, tld="com", num=int(total), stop=int(total), pause=2):
@@ -55,7 +54,7 @@ def extractEmailsFromUrlText(urlText):
     for email in allemails:
         if email not in seen:  # faster than `word not in output`
             seen.add(email)
-            emailFile.write(email+"\n")#appending Emails to a filerea
+            emailFile.write(email+"\n") #appending Emails to a filerea
 
 #HtmlPage Read Func
 def htmlPageRead(url, i):
@@ -100,3 +99,7 @@ print ("Elapsed Time: %s" % (time.time() - start))
 
 urlFile.close()
 emailFile.close()
+
+print("\n\n----------------------------------------------------------")
+print("Scrapping Function Ended")
+print("----------------------------------------------------------")

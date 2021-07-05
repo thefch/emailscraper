@@ -1,4 +1,5 @@
 *.txt
+.google-cookie
 pyvenv.cfg
 Lib
 Scripts
