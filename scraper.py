@@ -1,4 +1,6 @@
 import os
+clear = lambda: os.system("cls")
+clear()
 from config import total
 
 print("#########################################################")
