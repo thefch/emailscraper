@@ -5,7 +5,7 @@ from config import total
 
 print("#########################################################")
 print("#        Email Scraper - Dev. By Wellyington            #")
-print("#          https://wellyington.github.io/               #")
+print("#          \033[1;33;40mhttps://wellyington.github.io/\033[0;37;40m               #")
 print("#########################################################\n\n")
 
 try:
@@ -27,7 +27,7 @@ import re, urllib.request, time
 print("What is the search term?")
 query = input("Search: ")
 print("\n\n----------------------------------------------------------")
-print("Starting Scrapping Function")
+print("\033[1;32;40mStarting Scrapping Function\033[0;37;40m")
 print("----------------------------------------------------------")
 for j in search(query, tld="com", num=int(total), stop=int(total), pause=2):
     URLs = open("urls - " + query + ".txt","a")
@@ -103,5 +103,5 @@ urlFile.close()
 emailFile.close()
 
 print("\n\n----------------------------------------------------------")
-print("Scrapping Function Ended")
+print("\033[1;32;40mScrapping Function Ended\033[0;37;40m")
 print("----------------------------------------------------------")
