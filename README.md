@@ -15,9 +15,9 @@ The script requires Google Module in order to connect to Google API. When you fi
 try:
     from googlesearch import search
 except:
-    upgrade_pip = lambda: os.system("pip install --upgrade pip")
-    install_google = lambda: os.system("pip install google glob2")
-    reload_scraper = lambda: os.system("python scraper.py")
+    upgrade_pip = lambda: os.system("pip3 install --upgrade pip")
+    install_google = lambda: os.system("pip3 install google glob2")
+    reload_scraper = lambda: os.system("python3 scraper.py")
     print("Upgrading Pip")
     print("----------------------------------------------------------")
     upgrade_pip()
