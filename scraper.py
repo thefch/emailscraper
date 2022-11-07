@@ -4,7 +4,7 @@ import time
 import urllib.request
 from config import total
 
-os.system("cls_call")
+os.system("cls")
 
 
 print("#########################################################")
